@@ -1,11 +1,22 @@
 @font-face {
     font-family: 'Droid Serif Italic', arial;
     src: local("Droid Serif Italic"), url(../fonts/droid-serif-italic.ttf);
+    src: local("Droid Serif Italic"), url(../fonts/droid serif italic.ttf);
 }
 
 @font-face {
     font-family: 'Roboto Slab Regular', arial;
     src: local("Roboto Slab Regular"), url(../fonts/roboto-slab-regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat', arial;
+    src: local("Montserrat"), url(../fonts/montserrat.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat Bold', arial;
+    src: local("Montserrat Bold"), url(../fonts/montserrat-bold.ttf);
 }
 
 body {
@@ -368,6 +379,7 @@ footer {
 
 .feedback-text {
     margin-right: 0;
+    margin-bottom: 30px;
 }
 
 .feedback-input input[type=text] {
@@ -377,3 +389,309 @@ footer {
     outline: none;
     border: none;
 }
+
+.feedback-input input[type=text]:first-child {
+    margin-top: 0;
+}
+
+.feedback-text textarea {
+    width: 415px;
+    height: 188px;
+    padding: 20px;
+    font-family: 'Roboto Slab Regular', arial;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+.feedback input[type=submit] {
+    margin-left: 343px;
+    margin-bottom: 104px;
+    outline: none;
+    border: none;
+}
+
+
+/*-------*/
+
+.copyright {
+    display: inline-block;
+    width: 200px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.social-btn {
+    display: inline-block;
+    width: 41px;
+    height: 41px;
+    margin-top: 26px;
+    margin-right: 10px;
+    vertical-align: top;
+    background-image: url(../img/icon-sprite.png);
+    background-repeat: no-repeat;
+}
+
+.btn-fb {
+    background-position: -5px -5px;
+}
+
+.btn-gg {
+    background-position: -56px -5px;
+}
+
+.btn-tw {
+    margin-left: 200px;
+    background-position: -107px -5px;
+}
+
+.btn-fb:hover,
+.btn-gg:hover,
+.btn-tw:hover {
+    opacity: .5;
+}
+
+
+/*--- модальное окно Вход на сайт ----*/
+
+#modal_window_enter,
+#modal_window_reg {
+    display: none;
+}
+
+.fixed-overlay {
+    position: fixed;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fixed-overlay__modal {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.fixed-overlay__modal::after {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    content: '';
+}
+
+.modal {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.modal-window-container {
+    width: 630px;
+    min-width: 200px;
+    padding: 25px 35px;
+    text-align: left;
+    white-space: normal;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.modal-window-title-enter h2,
+.modal-window-title-reg h2 {
+    float: left;
+    margin: 5px 350px 30px 0;
+}
+
+.modal-window-title-reg h2 {
+    margin-right: 318px;
+}
+
+.modal-window-close {
+    display: inline-block;
+    vertical-align: middle;
+    width: 23px;
+    height: 20px;
+    padding-top: 3px;
+    color: red;
+    border-radius: 50%;
+    background-color: #dadada;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.modal-window-close:hover {
+    color: #fff;
+    background-color: red;
+}
+
+.error {
+    display: none;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.social-auth {
+    float: left;
+    width: 300px;
+    margin-right: 30px;
+}
+
+.social-auth-btn {
+    display: inline-block;
+    width: 250px;
+    margin-bottom: 15px;
+    vertical-align: top;
+    padding: 18px 0 18px 50px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.social-auth-fb {
+    position: relative;
+    background-color: #3d5c96;
+}
+
+.social-auth-btn:hover {
+    opacity: .8;
+}
+
+.social-auth-vk {
+    position: relative;
+    background-color: #2a5885;
+}
+
+.social-auth-fb:before,
+.social-auth-vk:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 54px;
+    height: 42px;
+    padding-top: 12px;
+    content: 'f';
+    font-weight: bold;
+    color: #fff;
+    font-size: 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: #1a4780;
+}
+
+.social-auth-vk:before {
+    content: 'B';
+    background: #1a4876;
+}
+
+.classic-auth {
+    float: left;
+    width: 300px;
+}
+
+.classic-auth input[type=email],
+.classic-auth input[type=password],
+.forgot-password-form input[type=email] {
+    width: 258px;
+    margin-bottom: 15px;
+    padding: 17px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    outline: none;
+    background-color: #f7f7f7;
+}
+
+.modal-window-btn {
+    float: left;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.modal-window-enter-user input[type=submit],
+.modal-window-reg-user input[type=submit] {
+    width: 200px;
+    margin: 15px 10px 25px 215px;
+    padding: 16px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.modal-window-reg-user input[type=submit] {
+    width: 350px;
+    margin-left: 140px;
+}
+
+.forgot-password-form {
+    display: none;
+}
+
+.forgot-password-form input[type=submit] {
+    width: 200px;
+    margin: 0 25px 0 0;
+    padding: 16px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.forgot-password-form input[type=email] {
+    float: left;
+    width: 310px;
+    margin-right: 25px;
+}
+
+.divider {
+    display: block;
+    height: 1px;
+    margin: 5px 0;
+    background-color: #c4c4c4;
+}
+
+.forgot-registration,
+.switch-enter-form {
+    padding: 10px 20px 0 20px;
+    color: #1a4780;
+}
+
+.forgot-registration span,
+.switch-enter-form span {
+    display: inline-block;
+    margin-right: 210px;
+    vertical-align: top;
+}
+
+.switch-enter-form span {
+    margin-right: 0;
+    margin-left: 202px;
+}
+
+.forgot-registration span a,
+.switch-enter-form span a {
+    color: #1a4780;
+    text-decoration: none;
+}
+
+.forgot-registration span a:hover,
+.switch-enter-form span a:hover {
+    text-decoration: underline;
+}
+
+.forgot-registration span:last-child {
+    margin-right: 0;
+}
+
+
+/*--- конец модального окна Вход на сайт ---*/
+

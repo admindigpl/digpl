@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link href="http://allfont.ru/allfont.css?fonts=droid-serif-italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -13,38 +15,41 @@
     <header>
         <div class="wrapper clearfix">
             <img class="logo" src="img/logo.png" alt="logo">
-            <!-- форма Поиск по сайту нужен скрипт  search.php для обработки этой формы         -->
-            <form class="search-site" action="search.php" method="get">
-                <input type="text" name="search" id="search" placeholder="Поиск по сайту">
-                <input type="submit" value="">
-            </form>
-            <!--  конец формы Поиск по сайту     -->
+               <!-- форма Поиск по сайту, скрипт search.php для обрабатывает эту форму  -->
+                <form class="search-site" action="search.php" method="get">
+                    <input type="text" name="search" id="search" placeholder="Поиск по сайту">
+                    <!-- при нажатии на эту кнопку переменная search отправлеятся скрипту search.php   -->
+                    <input type="submit" name="submit" value="">
+                </form>
+                <!--  конец формы Поиск по сайту     -->
 
-            <nav class="top-nav">
-                <ul>
-                    <li>
-                        <a class="top-menu-link" href="#">home</a>
-                    </li>
-                    <li>
-                        <a class="top-menu-link" href="#">services</a>
-                    </li>
-                    <li>
-                        <a class="top-menu-link" href="#">portfolio</a>
-                    </li>
-                    <li>
-                        <a class="top-menu-link" href="#">about</a>
-                    </li>
-                    <li>
-                        <a class="top-menu-link" href="#">contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <p class="promotext">Welcome To our Site!</p>
-            <h1 class="main-page-title">it's nice to meet you</h1>
-            <div class="btn-wrapper clearfix">
-                <a href="#" class="btn">вход</a>
-                <a href="#" class="btn">регистрация</a>
-            </div>
+                <nav class="top-nav">
+                    <ul>
+                        <li>
+                            <a class="top-menu-link" href="#">home</a>
+                        </li>
+                        <li>
+                            <a class="top-menu-link" href="#">services</a>
+                        </li>
+                        <li>
+                            <a class="top-menu-link" href="#">portfolio</a>
+                        </li>
+                        <li>
+                            <a class="top-menu-link" href="#">about</a>
+                        </li>
+                        <li>
+                            <a class="top-menu-link" href="#">contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="promotext">Welcome To our Site!</p>
+                <h1 class="main-page-title">it's nice to meet you</h1>
+                <div class="btn-wrapper clearfix">
+                    <!-- ссылки открывают соответствующие модальные окна -->
+                    <a class="btn" href="#" onclick="showModalWindow('modal_window_enter')">вход</a>
+                    <a class="btn" href="#" onclick="showModalWindow('modal_window_reg')">регистрация</a>
+                    <!--  -->
+                </div>
         </div>
     </header>
     <section class="services">
@@ -147,25 +152,135 @@
         <div class="wrapper">
             <span class="header-title">contact us</span>
             <p class="header-text">Proin iaculis purus consequat sem cure</p>
-            <form class="feedback clearfix" action="" method="post">
-                <div class="feedback-input">
-                    <input type="text" name="" id="" placeholder="YOUR NAME*">
-                    <input type="text" name="" id="" placeholder="YOUR E-MAIL*">
-                    <input type="text" name="" id="" placeholder="SUBJECT">
-                </div>
-                <div class="feedback-text">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                </div>
-                <input type="submit" value="">
-            </form>
+                <!--   форма для отправки сообщений администрации сайта    -->
+    <form class="feedback clearfix" action="feedback.php" method="post">
+        <div class="feedback-input">
+            <input type="text" name="quest_user_name" id="" placeholder="YOUR NAME*">
+            <input type="text" name="quest_user_mail" id="" placeholder="YOUR E-MAIL*">
+            <input type="text" name="quest_subject" id="" placeholder="SUBJECT">
         </div>
-        <div class="social">
-            <a href="" class="social-btn">twitter</a>
-            <a href="" class="social-btn">facebook</a>
-            <a href="" class="social-btn">google</a>
+        <div class="feedback-text">
+            <textarea name="quest_user_text" id="" placeholder="YOUR MESSAGE*"></textarea>
         </div>
+        <!-- при нажатии на эту кнопку переменные quest_user_name, quest_user_mail, quest_subject, quest_user_text отправляются скрипту feedback.php   -->
+        <input class="btn" type="submit" value="send message">
+        <!--   -->
+    </form>
+    </div>
+    <div class="social">
+        <div class="wrapper">
+            <p class="copyright">&#169; Copyright 2016</p>
+            <a href="http://twitter.com" class="social-btn btn-tw"></a>
+            <a href="http://facebook.com" class="social-btn btn-fb"></a>
+            <a href="http://google.com" class="social-btn btn-gg"></a>
+        </div>
+    </div>
     </footer>
 
+    <!--модальное окно Вход на сайт-->
+    <div class="fixed-overlay fixed-overlay__modal" id="modal_window_enter">
+        <div class="modal">
+            <div class="modal-window-container claerfix">
+                <div class="modal-window-title-enter clearfix">
+                    <h2>Войти в учетную запись</h2>
+                    <a href="#" class="modal-window-close" title="Закрыть окно" onclick="closeModalWindow('modal_window_enter')">X</a>
+                </div>
+                <!-- форма входа на сайт, данные отправляются скрипту enter_site.php -->
+                <form class="modal-window-enter-user clearfix" action="enter_site.php" method="post">
+                    <!-- текст "Пользователь с таким именем не зарегистрирован!" должен генерировать php, тут нужно применить ajax  -->
+                    <h3 class="error">Пользователь с таким именем не зарегистрирован!</h3>
+                    <!--   -->
+                    <div class="social-auth">
+                        <a class="social-auth-btn social-auth-fb" href="#">Войти через Facebook</a>
+                        <a class="social-auth-btn social-auth-vk" href="#">Войти через Вконтакте</a>
+                    </div>
+                    <div class="classic-auth">
+                        <input class="" type="email" name="user_login" id="user_login" placeholder="Ваш E-mail" required>
+                        <input class="" type="password" name="user_password" id="user_password" placeholder="Ваш пароль" required>
+                    </div>
+                    <!-- при нажатии на эту кнопку переменные user_login user_password отправляются скрипту enter_site.php   -->
+                    <input class="btn" id="form_enter_btn_submit" type="submit" name="submit" value="Вход">
+                    <!--   -->
+                </form>
+                <!-- форма для смены пароля -->
+                <form class="forgot-password-form clearfix" id="forgot_password_form" action="forgot_password.php" method="post">
+                    <!-- текст "Пользователь с таким именем не зарегистрирован!" должен генерировать php, тут нужно применить ajax  -->
+                    <h3 class="error"></h3>
+                    <input type="email" name="user_email" id="user_email" placeholder="Ваш E-mail" required>
+                    <!-- при нажатии на эту кнопку переменная user_email отправляются скрипту forgot_password.php   -->
+                    <input class="btn" type="submit" name="submit" value="Отправить">
+                    <!--     -->
+                    <a href="#" class="modal-window-close" title="Закрыть окно" onclick="toggleClass('form_enter_btn_submit', 'forgot_password_form')">X</a>
+                </form>
+                <span class="divider"></span>
+                <div class="forgot-registration">
+                    <span>Хотите <a href='#' onclick="toggleClass('modal_window_reg', 'modal_window_enter')">создать учетную запись</a>?</span>
+                    <span>Или <a class="forgot-password" href="#" onclick="toggleClass('forgot_password_form', 'form_enter_btn_submit')">забыли пароль?</a></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--модальное окно Регистрация-->
+    <div class="fixed-overlay fixed-overlay__modal" id="modal_window_reg">
+        <div class="modal">
+            <div class="modal-window-container claerfix">
+                <div class="modal-window-title-reg clearfix">
+                    <h2>Регистрция учетной записи</h2>
+                    <a href="#" class="modal-window-close" title="Закрыть окно" onclick="closeModalWindow('modal_window_reg')">X</a>
+                </div>
+                <!-- форма регистрации на сайте, данные отправляются скрипту reg_site.php -->
+                <form class="modal-window-reg-user clearfix" action="reg_site.php" method="post">
+                    <div class="social-auth">
+                        <a class="social-auth-btn social-auth-fb" href="#">Связать с Facebook</a>
+                        <a class="social-auth-btn social-auth-vk" href="#">Связать с  Вконтакте</a>
+                    </div>
+                    <div class="classic-auth">
+                        <input class="" type="email" name="new_user_login" id="new_user_login" placeholder="Ваш E-mail" required>
+                        <input class="" type="password" name="new_user_password" id="new_user_password" placeholder="Ваш пароль" required>
+                    </div>
+                    <!-- при нажатии на эту кнопку переменные new_user_login new_user_password отправляются скрипту reg_site.php   -->
+                    <input class="btn" id="form_reg_btn_submit" type="submit" value="Создать учетную запись">
+                    <!--    -->
+                </form>
+
+                <span class="divider"></span>
+                <div class="switch-enter-form">
+                    <span>Вы хотели <a href="#" onclick="toggleClass('modal_window_enter', 'modal_window_reg')">войти в систему</a>?</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        //показать модальное окно
+        function showModalWindow(elem) {
+            var element = document.getElementById(elem);
+            element.style.display = 'block';
+        }
+        //скрыть модальное окно
+        function closeModalWindow(elem) {
+            var element = document.getElementById(elem);
+            element.style.display = 'none';
+        }
+        //переключение классов
+        function toggleClass(elem1, elem2) {
+            var element1 = document.getElementById(elem1);
+            var element2 = document.getElementById(elem2)
+            element1.style.display = 'block';
+            element2.style.display = 'none';
+        }
+        //скрыть модальное окно при нажатии на Esc
+        window.addEventListener("keydown", function (event) {
+            if (event.keyCode == 27) {
+                var modal_window_enter = document.getElementById('modal_window_enter');
+                var modal_window_reg = document.getElementById('modal_window_reg');
+                modal_window_enter.style.display = 'none';
+                modal_window_reg.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
