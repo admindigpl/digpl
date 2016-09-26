@@ -26,7 +26,7 @@ body {
     font-size: 14px;
 }
 
-header {
+.main-header {
     width: 1400px;
     margin: 0 auto 100px;
     padding-top: 50px;
@@ -42,7 +42,7 @@ header {
 .wrapper {
     width: 940px;
     margin: 0 auto;
-    /*    outline: 1px solid black;*/
+    outline: 1px solid black
 }
 
 .logo {
@@ -410,10 +410,8 @@ footer {
     margin-bottom: 104px;
     outline: none;
     border: none;
+    cursor: pointer;
 }
-
-
-/*-------*/
 
 .copyright {
     display: inline-block;
@@ -695,3 +693,88 @@ footer {
 
 /*--- конец модального окна Вход на сайт ---*/
 
+
+/*--- личный кабинет ---*/
+
+.inner-header {
+    width: 1400px;
+    margin: 0 auto 100px;
+    /*    padding-top: 10px;*/
+    background-color: #f7f7f7;
+}
+
+.inner-header img {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.private-cabinet-top-nav {
+    width: 665px;
+    float: left;
+    margin-bottom: 30px;
+    padding-top: 25px;
+}
+
+.private-cabinet-top-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.private-cabinet-top-nav ul li {
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+}
+
+.private-cabinet-top-menu-link {
+    position: relative;
+    padding: 30px 10px 30px 40px;
+    color: #ababab;
+    text-decoration: none;
+}
+
+.private-cabinet-top-nav ul li .private-cabinet-top-menu-link i {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    opacity: .8;
+}
+
+.private-cabinet-top-nav ul li:first-child .private-cabinet-top-menu-link i {
+    left: 4px;
+}
+
+.private-cabinet-top-nav ul li:nth-child(3) .private-cabinet-top-menu-link i {
+    left: 14px;
+}
+
+.private-cabinet-top-menu-link:hover,
+.user-account-more:hover {
+    color: #000;
+}
+
+.user-profile-photo {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    border: 2px solid #ababab;
+    border-radius: 50%;
+    background: #fff url(../img/zagl.jpg) 0 0 no-repeat;
+}
+
+.user-account-more {
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px 30px 15px;
+    color: #ababab;
+    text-decoration: none;
+}
+
+.user-account .user-account-more i {
+    position: absolute;
+    top: 24px;
+    left: 103px;
+    opacity: .8;
+}

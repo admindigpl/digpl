@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link href="http://allfont.ru/allfont.css?fonts=droid-serif-italic" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="http://allfont.ru/allfont.css?fonts=droid-serif-italic">
     <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/style.css">
@@ -12,46 +13,47 @@
 
 <body>
 
-    <header>
+    <header class="main-header">
         <div class="wrapper clearfix">
             <img class="logo" src="img/logo.png" alt="logo">
-               <!-- форма Поиск по сайту, скрипт search.php для обрабатывает эту форму  -->
-                <form class="search-site" action="search.php" method="get">
-                    <input type="text" name="search" id="search" placeholder="Поиск по сайту">
-                    <!-- при нажатии на эту кнопку переменная search отправлеятся скрипту search.php   -->
-                    <input type="submit" name="submit" value="">
-                </form>
-                <!--  конец формы Поиск по сайту     -->
+            <!-- форма Поиск по сайту, скрипт search.php для обрабатывает эту форму  -->
+            <form class="search-site" action="search.php" method="get">
+                <input type="text" name="search" id="search" placeholder="Поиск по сайту">
+                <!-- при нажатии на эту кнопку переменная search отправлеятся скрипту search.php   -->
+                <input type="submit" name="submit" value="">
+            </form>
+            <!--  конец формы Поиск по сайту     -->
 
-                <nav class="top-nav">
-                    <ul>
-                        <li>
-                            <a class="top-menu-link" href="#">home</a>
-                        </li>
-                        <li>
-                            <a class="top-menu-link" href="#">services</a>
-                        </li>
-                        <li>
-                            <a class="top-menu-link" href="#">portfolio</a>
-                        </li>
-                        <li>
-                            <a class="top-menu-link" href="#">about</a>
-                        </li>
-                        <li>
-                            <a class="top-menu-link" href="#">contact</a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="promotext">Welcome To our Site!</p>
-                <h1 class="main-page-title">it's nice to meet you</h1>
-                <div class="btn-wrapper clearfix">
-                    <!-- ссылки открывают соответствующие модальные окна -->
-                    <a class="btn" href="#" onclick="showModalWindow('modal_window_enter')">вход</a>
-                    <a class="btn" href="#" onclick="showModalWindow('modal_window_reg')">регистрация</a>
-                    <!--  -->
-                </div>
+            <nav class="top-nav">
+                <ul>
+                    <li>
+                        <a class="top-menu-link" href="#">home</a>
+                    </li>
+                    <li>
+                        <a class="top-menu-link" href="#">services</a>
+                    </li>
+                    <li>
+                        <a class="top-menu-link" href="#">portfolio</a>
+                    </li>
+                    <li>
+                        <a class="top-menu-link" href="#">about</a>
+                    </li>
+                    <li>
+                        <a class="top-menu-link" href="#">contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="promotext">Welcome To our Site!</p>
+            <h1 class="main-page-title">create and earn!</h1>
+            <div class="btn-wrapper clearfix">
+                <!-- ссылки открывают соответствующие модальные окна -->
+                <a class="btn" href="#" onclick="showModalWindow('modal_window_enter')">вход</a>
+                <a class="btn" href="#" onclick="showModalWindow('modal_window_reg')">регистрация</a>
+                <!--  -->
+            </div>
         </div>
     </header>
+    
     <section class="services">
         <div class="wrapper clearfix">
             <h3 class="section-title">servisec</h3>
@@ -70,6 +72,7 @@
             </div>
         </div>
     </section>
+    
     <section class="portfolio">
         <div class="wrapper clearfix">
             <h3 class="section-title">our portfolio</h3>
@@ -106,6 +109,7 @@
             </div>
         </div>
     </section>
+    
     <section class="about">
         <div class="wrapper">
             <h3 class="section-title">about us</h3>
@@ -152,29 +156,29 @@
         <div class="wrapper">
             <span class="header-title">contact us</span>
             <p class="header-text">Proin iaculis purus consequat sem cure</p>
-                <!--   форма для отправки сообщений администрации сайта    -->
-    <form class="feedback clearfix" action="feedback.php" method="post">
-        <div class="feedback-input">
-            <input type="text" name="quest_user_name" id="" placeholder="YOUR NAME*">
-            <input type="text" name="quest_user_mail" id="" placeholder="YOUR E-MAIL*">
-            <input type="text" name="quest_subject" id="" placeholder="SUBJECT">
+            <!--   форма для отправки сообщений администрации сайта    -->
+            <form class="feedback clearfix" action="feedback.php" method="post">
+                <div class="feedback-input">
+                    <input type="text" name="quest_user_name" id="" placeholder="YOUR NAME*">
+                    <input type="text" name="quest_user_mail" id="" placeholder="YOUR E-MAIL*">
+                    <input type="text" name="quest_subject" id="" placeholder="SUBJECT">
+                </div>
+                <div class="feedback-text">
+                    <textarea name="quest_user_text" id="" placeholder="YOUR MESSAGE*"></textarea>
+                </div>
+                <!-- при нажатии на эту кнопку переменные quest_user_name, quest_user_mail, quest_subject, quest_user_text отправляются скрипту feedback.php   -->
+                <input class="btn" type="submit" value="send message">
+                <!--   -->
+            </form>
         </div>
-        <div class="feedback-text">
-            <textarea name="quest_user_text" id="" placeholder="YOUR MESSAGE*"></textarea>
+        <div class="social">
+            <div class="wrapper">
+                <p class="copyright">&#169; Copyright 2016</p>
+                <a href="http://twitter.com" class="social-btn btn-tw"></a>
+                <a href="http://facebook.com" class="social-btn btn-fb"></a>
+                <a href="http://google.com" class="social-btn btn-gg"></a>
+            </div>
         </div>
-        <!-- при нажатии на эту кнопку переменные quest_user_name, quest_user_mail, quest_subject, quest_user_text отправляются скрипту feedback.php   -->
-        <input class="btn" type="submit" value="send message">
-        <!--   -->
-    </form>
-    </div>
-    <div class="social">
-        <div class="wrapper">
-            <p class="copyright">&#169; Copyright 2016</p>
-            <a href="http://twitter.com" class="social-btn btn-tw"></a>
-            <a href="http://facebook.com" class="social-btn btn-fb"></a>
-            <a href="http://google.com" class="social-btn btn-gg"></a>
-        </div>
-    </div>
     </footer>
 
     <!--модальное окно Вход на сайт-->
